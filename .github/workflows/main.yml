@@ -16,4 +16,4 @@ jobs:
           SENTRY_PROJECT: javascripttest2
         with:
           environment: production
-          version: ${{ github.ref }}  
+          version: ${{github.ref}}  
