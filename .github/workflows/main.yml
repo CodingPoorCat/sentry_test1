@@ -1,0 +1,11 @@
+steps:
+  - name: Send Release to Sentry
+    uses: dmandrade/sentry-release-github-action@v1
+    env:
+      SENTRY_URL: https://mysentry.invalid/
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      SENTRY_ORG: foo
+      SENTRY_PROJECT: bar
+    with:
+      environment: production
+      version: ${{ github.ref }}
