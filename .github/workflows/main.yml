@@ -1,11 +1,19 @@
-steps:
-  - name: Send Release to Sentry
-    uses: dmandrade/sentry-release-github-action@v1
-    env:
-      SENTRY_URL: http://localhost:9000/
-      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-      SENTRY_ORG: foo
-      SENTRY_PROJECT: bar
-    with:
-      environment: production
-      version: ${{ github.ref }}
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Release to Sentry
+        uses: dmandrade/sentry-release-github-action@v1
+        env:
+          SENTRY_URL: http://localhost:9000/
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: foo
+          SENTRY_PROJECT: bar
+        with:
+          environment: production
+          version: ${{ github.ref }}
