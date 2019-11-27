@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/befiorIn.css">
+  <link rel="stylesheet" href="./css/entry.css">
+</head>
+
+<body>
+    <div id="logArea"></div>
+  <!-- <button class="btn">开始按钮</button> -->
+  <div class="container container-before">
+    <div class="title">
+      <img src="./img/title.png" alt="">
+    </div>
+    <div class="leave-lt leave">
+      <img class="zIndex3 leaf-lt1" src="./img/leaf_lt1.png" alt="">
+      <img class="zIndex2 leaf-lt2" src="./img/leaf_lt2.png" alt="">
+      <div class="zIndex1 progress">
+        <img src="./img/progress.png" alt="">
+        <div class="counter">
+          <span id="submitStuNum">1</span> /
+          <span id="totalStuNum">21</span>
+        </div>
+      </div>
+    </div>
+    <div class="leave-rt leave">
+      <img class="zIndex3 leaf-rt1" src="./img/leaf_rt1.png" alt="">
+      <img class="zIndex2 leaf-rt2" src="./img/leaf_rt2.png" alt="">
+      <img class="zIndex1 leaf-rt3" src="./img/leaf_rt3.png" alt="">
+    </div>
+    <div class="leave-lb leave">
+      <img class="zIndex3 leaf-lb1" src="./img/leaf_lb1.png" alt="">
+      <img class="zIndex2 leaf-lb2" src="./img/leaf_lb2.png" alt="">
+      <img class="zIndex1 stone2" src="./img/stone_left.png" alt="">
+    </div>
+    <div class="leave-rb leave">
+      <img class="zIndex3 leaf-rb1" src="./img/leaf_rb1.png" alt="">
+      <img class="zIndex2 leaf-rb2" src="./img/leaf_rb2.png" alt="">
+      <img class="zIndex1 stone3" src="./img/stone_right.png" alt="">
+    </div>
+    <div class="stars">
+      <img class="star1" src="./img/star.png" alt="">
+      <img class="star2" src="./img/star.png" alt="">
+      <img class="star3" src="./img/star.png" alt="">
+      <img class="star4" src="./img/star.png" alt="">
+      <img class="star5" src="./img/star.png" alt="">
+      <img class="star6" src="./img/star.png" alt="">
+      <img class="star7" src="./img/star.png" alt="">
+      <img class="star8" src="./img/star.png" alt="">
+    </div>
+
+    <div class="boxArea">
+      <!-- <div class="boxItem">
+        <div class="box">
+          <img class="unOpen" src="./img/box.png" alt="">
+          <div class="openedBox box5">
+            <img class="boxStar1 boxStar" src="./img/star.png" alt="">
+            <img class="boxStar2 boxStar" src="./img/star.png" alt="">
+            <div class="score"></div>
+          </div>
+        </div>
+        <p>周杰伦</p>
+        <img src="./img/shadow.png" alt="">
+      </div> -->
+    </div>
+    <div class="layer">
+      <div class="ready"><img src="./img/Ready.png" alt=""></div>
+      <div class="go">
+        <img class="btn" src="./img/button.png" alt="">
+        <img src="./img/Go.png" alt=""></div>
+    </div>
+    <audio id="bgMusic" >
+      <source src="./audio/bgMusic.mp3"  type="audio/mp3">
+    </audio>
+    <audio id="bgMusic2">
+      <source src="./audio/bgMusic.mp3"  type="audio/mp3">
+    </audio>
+    <audio id="titleMusic">
+      <source src="./audio/titleMusic.mp3"  type="audio/mp3">
+    </audio>
+    <audio id="boxMusic">
+      <source src="./audio/openBox.mp3"  type="audio/mp3">
+    </audio>
+    <audio id="readyGoMusic">
+      <source src="./audio/ReadyGo.wav"  type="audio/wav">
+    </audio>
+</body>
+<script id="boxTpl" type="text/html">
+  {{each $data student i}}
+  <div class="boxItem" id="{{student.studentExtId}}">
+      {{if i < 7}}
+      <div class="box box_line_1">
+        <img class="unOpen" src="./img/box.png" alt="">
+        <div class="openedBox hide">
+          <img class="boxStar1 boxStar" src="./img/star.png" alt="">
+          <img class="boxStar2 boxStar" src="./img/star.png" alt="">
+          <div class="score"></div>
+        </div>
+      </div>
+      {{else if i < 14}}
+      <div class="box box_line_2">
+          <img class="unOpen" src="./img/box.png" alt="">
+          <div class="openedBox hide">
+            <img class="boxStar1 boxStar" src="./img/star.png" alt="">
+            <img class="boxStar2 boxStar" src="./img/star.png" alt="">
+            <div class="score"></div>
+          </div>
+        </div>
+      {{else if i < 21}}
+      <div class="box box_line_3">
+          <img class="unOpen" src="./img/box.png" alt="">
+          <div class="openedBox hide">
+            <img class="boxStar1 boxStar" src="./img/star.png" alt="">
+            <img class="boxStar2 boxStar" src="./img/star.png" alt="">
+            <div class="score"></div>
+          </div>
+        </div>
+      {{else}}
+      <div class="box box_line_4">
+          <img class="unOpen" src="./img/box.png" alt="">
+          <div class="openedBox hide">
+            <img class="boxStar1 boxStar" src="./img/star.png" alt="">
+            <img class="boxStar2 boxStar" src="./img/star.png" alt="">
+            <div class="score"></div>
+          </div>
+        </div>
+      {{/if}}
+      <p>{{student.studentName.slice(0,4)}}</p>
+      <img src="./img/shadow.png" alt="">
+    </div>
+  {{/each}}
+</script>
+<script src="https://browser.sentry-cdn.com/5.9.1/bundle.min.js" integrity="sha384-/x1aHz0nKRd6zVUazsV6CbQvjJvr6zQL2CHbQZf3yoLkezyEtZUpqUNnOLW9Nt3v" crossorigin="anonymous">
+</script>
+<!-- <script src="./js/record.js"></script> -->
+<script src="./js/queue.js"></script>
+<script src="./js/http.js"></script>
+<script src="./js/artTemplate.js"></script>
+<script src="./js/lazyMan.js"></script>
+<script src="./js/index.js"></script>
+</html>

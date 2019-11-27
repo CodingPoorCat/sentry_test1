@@ -1,0 +1,268 @@
+@import './animation-controller.scss';
+.container-entry{
+  .stone,.leave >img,.stars,.progress{
+    transform: translate(0,0);
+  }
+  .title{
+    animation: titleIn linear .5s forwards
+  }
+  .leaf-rb1{
+    transform-origin: 100% 0;
+  }
+  .leaf-rt1,.leaf-rt2,.leaf-rb2{
+    transform-origin: 100% 100%;
+  }
+  .leaf-lt1,.leaf-lt2{
+    transform-origin: 0 0;
+  }
+  .leaf-lb1,.leaf-lb2{
+    transform-origin: 0 100%;
+  }
+  .leaf-lb1,.leaf-lt1,.leaf-rt1,.leaf-rb2{
+    animation: shake-lb1 $leave_duration linear $leave_delay infinite alternate forwards;
+  }
+  .leaf-lb2,.leaf-lt2,.leaf-rt2,.leaf-rb1{
+    animation: shake-lb2 $leave_duration linear $leave_delay infinite alternate forwards;
+  }
+
+  img,.stars,.title,.progress{
+    transition: transform linear .3s;
+  }
+  .stars{
+    .star1{
+      animation: shine $star_duration linear 1.5s infinite alternate forwards;
+    }
+    .star2{
+      animation: shine $star_duration linear 1s infinite alternate forwards;
+    }
+    .star3{
+      animation: shine $star_duration linear .8s infinite alternate forwards;
+    }
+    .star4{
+      animation: shine $star_duration linear  1.2s infinite alternate forwards;
+    }
+    .star5{
+      animation: shine $star_duration linear 1.5s infinite alternate forwards;
+    }
+    .star6{
+      animation: shine $star_duration linear .3s infinite alternate forwards;
+    }
+    .star7{
+      animation: shine $star_duration linear .5s infinite alternate forwards;
+    }
+    .star8{
+      animation: shine $star_duration linear .8s infinite alternate forwards;
+    }
+  }
+
+
+
+  
+.box{
+  animation: boxIn .4s ease-out forwards;
+}
+.box_line_1{
+  animation-delay: $box_in_delay_1
+}
+.box_line_2{
+  animation-delay: $box_in_delay_2
+}
+.box_line_3{
+  animation-delay: $box_in_delay_3
+}
+.box_line_4{
+  animation-delay: $box_in_delay_4
+}
+.opening{
+  .box{
+    animation: rewards1 .3s linear 3 forwards;
+  }
+}
+.opened.boxItem{
+  .box{
+    animation:none;
+    transform: scale(1);
+  }
+  .unOpen{
+    visibility: hidden
+  }
+  .openedBox{
+    visibility: visible
+  }
+  .boxStar1{
+    animation: boxStar1 2s ease-out forwards;
+  }
+  .boxStar2{
+    animation: boxStar2 2s ease-out forwards;
+  }
+  .score{
+    transform: scale(1) translate(-10px,-10px)
+  }
+  .box5{
+    .score{
+      transform: scale(.6) translate(-10px,10px)
+    }
+  }
+  .box10{
+    .score{
+      transform: scale(.8) translate(-10px,10px)
+    }
+  }
+}
+}
+
+.layer.showReady{
+  visibility: visible;
+  .ready{
+    transform: scale(1) translate(-50%,-50%);
+  }
+}
+.layer.showGo{
+  visibility: visible;
+  .go{
+    transform: scale(1) translate(-50%,-50%);
+  }
+  .btn{
+    animation: btn .5s linear 1s infinite reverse forwards;
+  }
+}
+
+
+
+
+
+@keyframes shake-lb2{
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(-2deg)
+  }
+}
+@keyframes shake-lb1{
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(2deg)
+  }
+}
+
+// 宝箱进来
+@keyframes boxIn{
+  0%{
+    transform: scale(0) translateY(0)
+  }
+  50%{
+    transform: scale(.5) translateY(0px)
+  }
+  80%{
+    transform: scale(.8) translateY(0px)
+  }
+  100%{
+    transform: scale(1) translateY(30px)
+  }
+}
+
+@keyframes rewards1{
+  0%{
+    transform: translate(0,30px)
+  }
+  20%{
+    transform: translate(2px,32px)
+  }
+  40%{
+    transform: translate(2px,28px)
+  }
+  60%{
+    transform: translate(-2px,32px)
+  }
+  80%{
+    transform: translate(2px,28px)
+  }
+  100%{
+    transform: translate(0,30px);
+  }
+}
+
+@keyframes boxStar1{
+  0%{
+    opacity: 1;
+    transform: translate(0,0) scale(.1) rotate(0)
+  }
+  10%{
+    opacity: 1;
+    transform: translate(-40px,-20px) scale(.25) rotate(180deg)
+  }
+  // 60%{
+  //   opacity: .8;
+  //   transform: translate(-40px,-30px) scale(.2) rotate(180deg)
+  // }
+  // 99%{
+  //   opacity: .5;
+  //   transform: translate(-40px,-40px) scale(.2) rotate(270deg)
+  // }
+  100%{
+    opacity: 0;
+    transform: translate(-40px,-30px) scale(.25) rotate(540deg)
+  }
+}
+@keyframes boxStar2{
+  0%{
+    opacity: 1;
+    transform: translate(0,0) scale(.1) rotate(0)
+  }
+  10%{
+    opacity: 1;
+    transform: translate(40px,-20px) scale(.25) rotate(180deg)
+  }
+  // 60%{
+  //   opacity: .8;
+  //   transform: translate(-40px,-30px) scale(.2) rotate(180deg)
+  // }
+  // 99%{
+  //   opacity: .5;
+  //   transform: translate(-40px,-40px) scale(.2) rotate(270deg)
+  // }
+  100%{
+    opacity: 0;
+    transform: translate(40px,-20px) scale(.25) rotate(540deg)
+  }
+}
+
+@keyframes btn {
+  0%{
+    transform: scale(1)
+  }
+  49%{
+    transform: scale(1)
+  }
+  50%{
+    transform: scale(1.1)
+  }
+  100%{
+    transform: scale(1.1)
+  }
+}
+@keyframes shine{
+  from {
+    opacity: 1;
+  }
+  to{
+    opacity: 0.6;
+  }
+}
+@keyframes titleIn {
+  0%{
+    transform: translate(0,-100%)
+  }
+  50%{
+    transform: translate(0,8%)
+  }
+  75%{
+    transform: translate(0,-4%)
+  }
+  100%{
+    transform: translate(0,0)
+  }
+}

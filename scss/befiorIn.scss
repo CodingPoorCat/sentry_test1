@@ -1,0 +1,16 @@
+.container-before{
+  
+  .leaf-lt1,.leaf-lt2,.leaf-lb1,.leaf-lb2{
+    transform: translate(-100%,0)
+  }
+  .progress,.leaf-rt3,.title{
+    transform: translate(0,-100%)
+  }
+
+  .leaf-rt1,.leaf-rt2,.leaf-rb1,.leaf-rb2{
+    transform: translate(100%,0)
+  }
+  .stone3,.stone2,.stars{
+    transform: translate(0,100%)
+  }
+} 

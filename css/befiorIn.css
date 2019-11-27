@@ -1,0 +1,17 @@
+.container-before .leaf-lt1, .container-before .leaf-lt2, .container-before .leaf-lb1, .container-before .leaf-lb2 {
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0); }
+
+.container-before .progress, .container-before .leaf-rt3, .container-before .title {
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%); }
+
+.container-before .leaf-rt1, .container-before .leaf-rt2, .container-before .leaf-rb1, .container-before .leaf-rb2 {
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0); }
+
+.container-before .stone3, .container-before .stone2, .container-before .stars {
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%); }
+
+/*# sourceMappingURL=befiorIn.css.map */
