@@ -7,7 +7,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Send Release to Sentry
+      - name: Sentry Release Action
         uses: dmandrade/sentry-release-github-action@v1
         env:
           SENTRY_URL: http://localhost:9000/
@@ -16,4 +16,4 @@ jobs:
           SENTRY_PROJECT: javascripttest2
         with:
           environment: production
-          version: ${{github.ref}}  
+          version: steps.release.outputs.version  
