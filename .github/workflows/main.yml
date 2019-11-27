@@ -14,5 +14,3 @@ jobs:
           SENTRY_AUTH_TOKEN: zDh>0@cK_z>to^_b00\D>C1Pr-?4Z+B(N>60jpqjp+Q0gkB.IE
           SENTRY_ORG: foo
           SENTRY_PROJECT: bar
-        with:
-          environment: production
